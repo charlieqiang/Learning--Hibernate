@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<!-- package声明pojo类所在的包，如果不写那么在class中需要指明pojo类所在的包 -->
+<hibernate-mapping>
+    <!-- class指映射一个pojo类提供了公共的无参构造方法   通过反射产生对象属性用private修饰，
+    并且生成对应的get/set方法 ，name表示pojo类名，table表示pojo类对应数据库中的表名，如果不写默认是类名-->
+    <class name="kim.spe.entity.User" table="t_user">
+        <!-- id表示实体类的标识对应数据库表中的主键，name指实体类的标识属性名，column标识对应数据库表列名，
+        如果不写则数据库表中列名和属性名一致，length表示数据库中对应数据类型的长度，
+        如果不写有默认长度，type表示类型如果不写hibernate可以找到对应pojo类的属性的类型-->
+        <id name="uid">
+            <!-- 主键生成策略-->
+            <generator class="uuid" />
+        </id>
+        <!-- 实体类的属性，name指明pojo类属性名称（区分大小写）-->
+        <property name="username" column="username"></property>
+        <property name="password" column="password"></property>
+        <property name="address" column="address"></property>
+        
+    </class>
+</hibernate-mapping>

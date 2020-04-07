@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <!-- MySQL登录账户名 -->
+    <property name="connection.username">root</property>
+    <!-- 账户密码 -->
+    <property name="connection.password">123</property>
+    <!-- 一些属性信息 -->
+    <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="connection.url">jdbc:mysql://localhost:3306</property>
+    <property name="dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+    <!-- 指定在程序运行时在控制台输出SQL语句 -->
+    <property name="show_sql">true</property>
+    <!-- 输出的SQL语句格式化 -->
+    <property name="format_sql">true</property>
+    <!-- 运行时在数据库自动生成数据表，这里选择update -->
+    <property name="hbm2ddl.auto">update</property>
+  </session-factory>
+</hibernate-configuration>
